@@ -64,7 +64,7 @@ def update_home_page():
     print(make_home_page(projects), file=open(home_page_name, 'a'))
 
 
-def make_project_pages():
+def update_project_pages():
     '''
     Generate HTML page for a project with links to all tracks.
     '''
@@ -72,13 +72,13 @@ def make_project_pages():
     from qawebserver.project_page import make_project_page
 
     # List of all projects
-    projects = [str(x).split("/")[1] for x in data_home.iterdir() if x.is_dir()]
+    projects = [str(x).split("/")[-1] for x in data_home.iterdir() if x.is_dir()]
 
     for project in projects:
         project_page = data_home / project
 
         # Create list of project folders:
-        tracks = [str(x).split("/")[1] for x in project_page.iterdir() if x.is_dir()]
+        tracks = [str(x).split("/")[-1] for x in project_page.iterdir() if x.is_dir()]
 
         project_rep = project.replace('-', '_')
 
@@ -87,7 +87,7 @@ def make_project_pages():
         if project_page_name.exists():
             project_page_name.unlink()
 
-        print(make_project_page(tracks, home_page=''), file=open(project_page_name, 'a'))
+        print(make_project_page(tracks, project, projects, home_page=''), file=open(project_page_name, 'a'))
 
         # Inlude main.css if it doesn't exist:
 
