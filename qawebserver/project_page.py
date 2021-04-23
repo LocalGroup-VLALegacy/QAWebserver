@@ -1,5 +1,5 @@
 
-def make_project_page(tracks, project, projects, home_page="/"):
+def make_project_page(tracks, project, projects, home_page="../../"):
 
     # Make list of project links:
     project_str = ""
@@ -13,7 +13,6 @@ def make_project_page(tracks, project, projects, home_page="/"):
     # TODO: Format links into a table
     track_str = ""
     for track in tracks:
-        proj_rep = track.replace("-", "_")
         track_str += f'<a href="data/{project}/{track}/index.html">{track}</a>\n'
 
     page_str = \

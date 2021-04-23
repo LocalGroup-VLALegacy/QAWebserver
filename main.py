@@ -106,13 +106,13 @@ def make_track_page(name):
 def make_html_pages(dir):
     pass
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    INPUTDIR = "data_staging/"
-    OUTPUTDIR = "public_html/data/"
+#     INPUTDIR = "data_staging/"
+#     OUTPUTDIR = "public_html/data/"
 
-    dcmp = filecmp.dircmp(INPUTDIR, OUTPUTDIR)
+#     dcmp = filecmp.dircmp(INPUTDIR, OUTPUTDIR)
 
-    traverse_structure(dcmp)
+#     traverse_structure(dcmp)
 
-    make_html_pages(OUTPUTDIR)
+#     make_html_pages(OUTPUTDIR)
