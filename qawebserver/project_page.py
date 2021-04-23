@@ -5,13 +5,13 @@ def make_project_page(tracks, project, projects, home_page="/"):
     project_str = ""
     for project in projects:
         proj_rep = project.replace("-", "_")
-        project_str += f'<a href="{project}/index_{proj_rep}.html">{project}</a>\n'
+        project_str += f'<a href="data/{project}/index_{proj_rep}.html">{project}</a>\n'
 
     # Make a list of track links:
     track_str = ""
     for track in tracks:
         proj_rep = track.replace("-", "_")
-        track_str += f'<a href="{project}/{track}/index.html">{track}</a>\n'
+        track_str += f'<a href="data/{project}/{track}/index.html">{track}</a>\n'
 
     page_str = \
 f'''

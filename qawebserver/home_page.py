@@ -5,7 +5,7 @@ def make_home_page(projects):
     project_str = ""
     for project in projects:
         proj_rep = project.replace("-", "_")
-        project_str += f'<a href="{project}/index_{proj_rep}.html">{project}</a>\n'
+        project_str += f'<a href="data/{project}/index_{proj_rep}.html">{project}</a>\n'
 
     page_str = \
 f'''

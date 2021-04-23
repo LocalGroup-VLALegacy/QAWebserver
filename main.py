@@ -54,7 +54,7 @@ def update_home_page():
     from qawebserver.home_page import make_home_page
 
     # Create list of project folders:
-    projects = [str(x).split("/")[1] for x in data_home.iterdir() if x.is_dir()]
+    projects = [str(x).split("/")[-1] for x in data_home.iterdir() if x.is_dir()]
 
     home_page_name = webserver_home / "index.html"
 
