@@ -3,9 +3,12 @@ def make_project_page(tracks, project, projects, home_page="../../"):
 
     # Make list of project links:
     project_str = ""
-    for project in projects:
-        proj_rep = project.replace("-", "_")
-        project_str += f'<a href="../index_{proj_rep}.html">{project}</a>\n'
+    for thisproject in projects:
+        thisproj_rep = thisproject.replace("-", "_")
+        if thisproject == project:
+            project_str += f'<a href="index_{thisproj_rep}.html">{thisproject}</a>\n'
+            continue
+        project_str += f'<a href="../index_{thisproj_rep}.html">{thisproject}</a>\n'
 
     # Make a list of track links:
     # TODO: Split by semester
