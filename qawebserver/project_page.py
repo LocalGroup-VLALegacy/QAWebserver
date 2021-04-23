@@ -8,6 +8,9 @@ def make_project_page(tracks, project, projects, home_page="/"):
         project_str += f'<a href="data/{project}/index_{proj_rep}.html">{project}</a>\n'
 
     # Make a list of track links:
+    # TODO: Split by semester
+    # TODO: Split by target
+    # TODO: Format links into a table
     track_str = ""
     for track in tracks:
         proj_rep = track.replace("-", "_")
