@@ -31,9 +31,7 @@ f'''
 
 <h2>{project}</h2>
 
-<div class="sidenav">
-    {track_str}
-</div>
+{track_str}
 
 </div>'''
 
