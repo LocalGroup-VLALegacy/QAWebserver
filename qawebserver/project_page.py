@@ -29,7 +29,9 @@ f'''
 <!-- Page content -->
 <div class="main">
 
-<h2>{project}</h2>
+<h2>Overview page for {project}</h2>
+
+Tracks:
 
 {track_str}
 
