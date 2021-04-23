@@ -5,7 +5,7 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     project_str = ""
     for project in projects:
         proj_rep = project.replace("-", "_")
-        project_str += f'<a href="data/{project}/index_{proj_rep}.html">{project}</a>\n'
+        project_str += f'<a href="../index_{proj_rep}.html">{project}</a>\n'
 
     # Make a list of track links:
     # TODO: Split by semester
@@ -13,12 +13,12 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     # TODO: Format links into a table
     track_str = ""
     for track in tracks:
-        track_str += f'<a href="data/{project}/{track}/index.html">{track}</a>\n'
+        track_str += f'<a href="{track}/index.html">{track}</a>\n'
 
     page_str = \
 f'''
 <!-- Side navigation -->
-<head>
+<head>\
     <link rel="stylesheet" href="main.css">
 </head>
 <div class="sidenav">

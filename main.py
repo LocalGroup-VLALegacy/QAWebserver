@@ -87,7 +87,7 @@ def update_project_pages():
         if project_page_name.exists():
             project_page_name.unlink()
 
-        print(make_project_page(tracks, project, projects, home_page=''), file=open(project_page_name, 'a'))
+        print(make_project_page(tracks, project, projects), file=open(project_page_name, 'a'))
 
         # Inlude main.css if it doesn't exist:
 
