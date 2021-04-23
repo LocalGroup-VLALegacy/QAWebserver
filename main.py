@@ -16,6 +16,7 @@ from qawebserver.utils import (make_html_suffix, make_html_preamble,
 #           'PRODUCTS': new_product_setup}
 
 webserver_home = Path('public_html')
+data_home = webserver_home / 'data'
 
 
 # TODO: Compare input and output dirs for changes.
@@ -53,9 +54,9 @@ def update_home_page():
     from qawebserver.home_page import make_home_page
 
     # Create list of project folders:
-    projects = [str(x).split("/")[1] for x in webserver_home.iterdir() if x.is_dir()]
+    projects = [str(x).split("/")[1] for x in data_home.iterdir() if x.is_dir()]
 
-    home_page_name = Path("public_html/index.html")
+    home_page_name = webserver_home / "index.html"
 
     if home_page_name.exists():
         home_page_name.unlink()
@@ -71,17 +72,17 @@ def make_project_pages():
     from qawebserver.project_page import make_project_page
 
     # List of all projects
-    projects = [str(x).split("/")[1] for x in webserver_home.iterdir() if x.is_dir()]
+    projects = [str(x).split("/")[1] for x in data_home.iterdir() if x.is_dir()]
 
     for project in projects:
-        project_page = webserver_home / project
+        project_page = data_home / project
 
         # Create list of project folders:
         tracks = [str(x).split("/")[1] for x in project_page.iterdir() if x.is_dir()]
 
         project_rep = project.replace('-', '_')
 
-        project_page_name = Path(f"public_html/{project}/index_{project_rep}.html")
+        project_page_name = data_home / f"{project}/index_{project_rep}.html"
 
         if project_page_name.exists():
             project_page_name.unlink()
@@ -90,7 +91,7 @@ def make_project_pages():
 
         # Inlude main.css if it doesn't exist:
 
-        main_css_name = Path(f"public_html/{project}/main.css")
+        main_css_name = data_home / f"{project}/main.css"
 
         if not main_css_name.exists():
             print(main_css_page_style(), file=open(main_css_name, 'a'))
