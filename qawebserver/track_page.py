@@ -10,10 +10,10 @@ def make_track_page(track, continuum_products, speclines_products,
     track_str = ""
     for thistrack in tracks:
         if thistrack == track:
-            track_str += f'<a href="index.html">{track}</a>\n'
+            track_str += f'<a href="index.html">{thistrack}</a>\n'
             continue
 
-        track_str += f'<a href="../{track}/index.html">{track}</a>\n'
+        track_str += f'<a href="../{thistrack}/index.html">{thistrack}</a>\n'
 
     # TODO: Format links into a table
 

@@ -117,7 +117,6 @@ def update_track_pages():
         for track in tracks:
             track_page = project_page / track
 
-
             continuum_products = [str(x).split("/")[-1] for x in (track_page / "continuum").iterdir() if x.is_dir()]
             speclines_products = [str(x).split("/")[-1] for x in (track_page / "speclines").iterdir() if x.is_dir()]
 
