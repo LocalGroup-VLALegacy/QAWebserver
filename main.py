@@ -133,8 +133,8 @@ def update_track_pages():
 
             main_css_name = track_page / "main.css"
 
-        if not main_css_name.exists():
-            print(main_css_page_style(), file=open(main_css_name, 'a'))
+            if not main_css_name.exists():
+                print(main_css_page_style(), file=open(main_css_name, 'a'))
 
 
 def make_html_pages(dir):
