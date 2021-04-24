@@ -97,11 +97,45 @@ def update_project_pages():
             print(main_css_page_style(), file=open(main_css_name, 'a'))
 
 
-def make_track_page(name):
+def update_track_pages():
     '''
     Generate HTML page for a track with links to all products with versions split
     by continuum and speclines.
     '''
+
+    from qawebserver.track_page import make_track_page
+
+    # List of all projects
+    projects = [str(x).split("/")[-1] for x in data_home.iterdir() if x.is_dir()]
+
+    for project in projects:
+        project_page = data_home / project
+
+        # Create list of project folders:
+        tracks = [str(x).split("/")[-1] for x in project_page.iterdir() if x.is_dir()]
+
+        for track in tracks:
+            track_page = project_page / track
+
+
+            continuum_products = [str(x).split("/")[-1] for x in (track_page / "continuum").iterdir() if x.is_dir()]
+            speclines_products = [str(x).split("/")[-1] for x in (track_page / "speclines").iterdir() if x.is_dir()]
+
+            track_page_name = track_page / "index.html"
+
+            if track_page_name.exists():
+                track_page_name.unlink()
+
+            print(make_track_page(track, continuum_products, speclines_products,
+                                  tracks, project), file=open(track_page_name, 'a'))
+
+            # Inlude main.css if it doesn't exist:
+
+            main_css_name = track_page / "main.css"
+
+        if not main_css_name.exists():
+            print(main_css_page_style(), file=open(main_css_name, 'a'))
+
 
 def make_html_pages(dir):
     pass
