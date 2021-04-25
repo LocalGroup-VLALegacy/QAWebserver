@@ -15,15 +15,15 @@ def make_track_page(track, continuum_products, speclines_products,
 
         track_str += f'<a href="../{thistrack}/index.html">{thistrack}</a>\n'
 
-    # TODO: Format links into a table
-
-    continuum_str = ""
+    continuum_str = '<table style="width:60%">\n'
     for continuum_product in continuum_products:
-        continuum_str += f'<a href="continuum/{continuum_product}/index.html">{track}</a>\n'
+        continuum_str += f'<tr>\n<td><a href="continuum/{continuum_product}/index.html">{track}</a></td>\n</tr>\n'
+    continuum_str += '</table>'
 
-    speclines_str = ""
+    speclines_str = '<table style="width:60%">\n'
     for speclines_product in speclines_products:
-        speclines_str += f'<a href="speclines/{speclines_product}/index.html">{track}</a>\n'
+        speclines_str += f'<tr>\n<td><a href="speclines/{speclines_product}/index.html">{track}</a></td>\n</tr>\n'
+    speclines_str += '</table>'
 
     page_str = \
 f'''
@@ -44,11 +44,11 @@ f'''
 
 <h2>Overview page for {track}</h2>
 
-Continuum Products:
+<h3>Continuum Products:</h3>
 
 {continuum_str}
 
-Spectral line Products:
+<h3>Spectral line Products:</h3>
 
 {speclines_str}
 
