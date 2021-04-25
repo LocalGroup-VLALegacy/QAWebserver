@@ -17,12 +17,12 @@ def make_track_page(track, continuum_products, speclines_products,
 
     continuum_str = '<table style="width:60%">\n'
     for continuum_product in continuum_products:
-        continuum_str += f'<tr>\n<td><a href="continuum/{continuum_product}/index.html">{track}</a></td>\n</tr>\n'
+        continuum_str += f'<tr>\n<td><a href="continuum/{continuum_product}/index.html">{continuum_product}</a></td>\n</tr>\n'
     continuum_str += '</table>'
 
     speclines_str = '<table style="width:60%">\n'
     for speclines_product in speclines_products:
-        speclines_str += f'<tr>\n<td><a href="speclines/{speclines_product}/index.html">{track}</a></td>\n</tr>\n'
+        speclines_str += f'<tr>\n<td><a href="speclines/{speclines_product}/index.html">{speclines_product}</a></td>\n</tr>\n'
     speclines_str += '</table>'
 
     page_str = \
