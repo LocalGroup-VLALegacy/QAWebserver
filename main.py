@@ -25,10 +25,10 @@ def traverse_structure(dcmp, level=0, max_level=4):
     if level >= max_level:
         return
 
-    levelname = list(LEVELS.keys())[level]
+    # levelname = list(LEVELS.keys())[level]
 
-    for name in dcmp.left_only:
-        LEVELS[levelname](name)
+    # for name in dcmp.left_only:
+    #     LEVELS[levelname](name)
 
     for name in dcmp.diff_files:
         print(dcmp.left_only)
@@ -39,11 +39,6 @@ def traverse_structure(dcmp, level=0, max_level=4):
         print(key)
 
         traverse_structure(sub_dcmp, level=level+1, max_level=max_level)
-
-
-# TODO: Generate landing html page w/ links to projects
-# TODO: Generate per project index
-# TODO: Generate per track index
 
 
 def update_home_page():
@@ -136,16 +131,19 @@ def update_track_pages():
                 print(main_css_page_style(), file=open(main_css_name, 'a'))
 
 
-def make_html_pages(dir):
-    pass
+def update_html_pages():
 
-# if __name__ == '__main__':
+    update_home_page()
+    update_project_pages()
+    update_track_pages()
 
-#     INPUTDIR = "data_staging/"
-#     OUTPUTDIR = "public_html/data/"
+if __name__ == '__main__':
 
-#     dcmp = filecmp.dircmp(INPUTDIR, OUTPUTDIR)
+    # INPUTDIR = "data_staging/"
+    # OUTPUTDIR = "public_html/data/"
 
-#     traverse_structure(dcmp)
+    # dcmp = filecmp.dircmp(INPUTDIR, OUTPUTDIR)
 
-#     make_html_pages(OUTPUTDIR)
+    # traverse_structure(dcmp)
+
+    make_html_pages()
