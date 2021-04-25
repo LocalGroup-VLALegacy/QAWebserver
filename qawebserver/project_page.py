@@ -14,10 +14,24 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     # TODO: Split by semester
     # TODO: Split by target
 
-    track_str = '<table style="width:60%">\n'
+    configs = [track.split('_')[1] for track in tracks]
+    configs = list(set(configs))
+
+    config_str_dict = dict.from_keys(configs)
+    for key in config_str_dict:
+        config_str_dict[key] = '<table style="width:60%">\n'
+
     for track in tracks:
-        track_str += f'<tr>\n<td><a href="{track}/index.html">{track}</a></td>\n</tr>\n'
-    track_str += '</table>'
+        config_str_dict[track.split('_')[1]] += f'<tr>\n<td><a href="{track}/index.html">{track}</a></td>\n</tr>\n'
+
+    for key in config_str_dict:
+        config_str_dict[key] += '</table>'
+
+    track_str = ""
+    for key in config_str_dict:
+        track_str += f"{key}\n"
+        track_str += config_str_dict[key]
+        track_str += "\n"
 
     page_str = \
 f'''
