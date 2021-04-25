@@ -146,4 +146,4 @@ if __name__ == '__main__':
 
     # traverse_structure(dcmp)
 
-    make_html_pages()
+    update_html_pages()
