@@ -13,10 +13,11 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     # Make a list of track links:
     # TODO: Split by semester
     # TODO: Split by target
-    # TODO: Format links into a table
-    track_str = ""
+
+    track_str = '<table style="width:60%">\n'
     for track in tracks:
-        track_str += f'<a href="{track}/index.html">{track}</a>\n'
+        track_str += f'<tr>\n<td><a href="{track}/index.html">{track}</a></td>\n</tr>\n'
+    track_str += '</table>'
 
     page_str = \
 f'''
