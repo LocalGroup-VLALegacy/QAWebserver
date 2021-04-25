@@ -11,8 +11,9 @@ def make_project_page(tracks, project, projects, home_page="../../"):
         project_str += f'<a href="../index_{thisproj_rep}.html">{thisproject}</a>\n'
 
     # Make a list of track links:
-    # TODO: Split by semester
-    # TODO: Split by target
+
+    # Sort the tracks by date taken:
+    tracks = sort(tracks, key=lambda x: float(".".join(x.split('.')[3:])))
 
     configs = [track.split('_')[1] for track in tracks]
     configs = list(set(configs))
