@@ -13,7 +13,7 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     # Make a list of track links:
 
     # Sort the tracks by date taken:
-    tracks = sort(tracks, key=lambda x: float(".".join(x.split('.')[3:])))
+    tracks = sorted(tracks, key=lambda x: float(".".join(x.split('.')[3:])))
 
     configs = [track.split('_')[1] for track in tracks]
     configs = list(set(configs))
