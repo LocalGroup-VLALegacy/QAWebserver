@@ -51,8 +51,6 @@ f'''
 
 <h2>Overview page for {project}</h2>
 
-Tracks:
-
 {track_str}
 
 </div>'''
