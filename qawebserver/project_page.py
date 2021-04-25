@@ -17,7 +17,7 @@ def make_project_page(tracks, project, projects, home_page="../../"):
     configs = [track.split('_')[1] for track in tracks]
     configs = list(set(configs))
 
-    config_str_dict = dict.from_keys(configs)
+    config_str_dict = dict.fromkeys(configs)
     for key in config_str_dict:
         config_str_dict[key] = '<table style="width:60%">\n'
 
@@ -29,7 +29,7 @@ def make_project_page(tracks, project, projects, home_page="../../"):
 
     track_str = ""
     for key in config_str_dict:
-        track_str += f"{key}\n"
+        track_str += f"<h3>Config: {key}</h3>\n"
         track_str += config_str_dict[key]
         track_str += "\n"
 
