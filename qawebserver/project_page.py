@@ -43,6 +43,7 @@ f'''
 <div class="sidenav">
     <a href="{home_page}">Home</a>
     {project_str}
+    <a href="https://docs.google.com/document/d/1gFfA9IyWrU-MIYNpbUQ7CLFetpPIe6vE9llqVhhOz4U/edit?usp=sharing">QA Guide</a>
     <a href="https://drive.google.com/drive/u/0/folders/1xSlf0op7DPZhJyylphSfOY6684O-Xb-a">Google Drive</a>
     <a href="https://docs.google.com/spreadsheets/d/1ROuailtqnaCJVI_ek_perxN8ki9siSUrV_N-bLC3Dqg/edit">Issue Sheet</a>
 </div>

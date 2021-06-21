@@ -15,8 +15,10 @@ f'''
 </head>
 <div class="sidenav">
     {project_str}
+    <a href="https://docs.google.com/document/d/1gFfA9IyWrU-MIYNpbUQ7CLFetpPIe6vE9llqVhhOz4U/edit?usp=sharing">QA Guide</a>
     <a href="https://drive.google.com/drive/u/0/folders/1xSlf0op7DPZhJyylphSfOY6684O-Xb-a">Google Drive</a>
     <a href="https://docs.google.com/spreadsheets/d/1ROuailtqnaCJVI_ek_perxN8ki9siSUrV_N-bLC3Dqg/edit">Issue Sheet</a>
+
 </div>
 
 <!-- Page content -->
@@ -24,6 +26,9 @@ f'''
 
 <h2>VLA-XL QA Server</h2>
 Welcome to the VLA Local Group XL QA server
+
+Getting started? See the <a href="https://docs.google.com/document/d/1gFfA9IyWrU-MIYNpbUQ7CLFetpPIe6vE9llqVhhOz4U/edit?usp=sharing">QA Guide</a>
+
 <h4>Using the QA interactive plots:</h4>
 <p>
 The interactive plots described above will present up to 8 subplots (for calibrators; 3 for target fields) with multiple SPWs. Here are some tips for navi>
